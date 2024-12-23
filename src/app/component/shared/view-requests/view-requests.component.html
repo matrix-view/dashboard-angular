@@ -1,0 +1,52 @@
+<main>
+  <section>
+    <div class="button" #divButton>
+      <i class="pi pi-users"></i>
+      <span>{{ 'PAGES.COMPONENTS.SALES_PERSON_SELECTOR.TITLE' |  translate }}</span>
+      <p-badge [value]="counter()" [hidden]="hiddenBadge()"/>
+      <i class="fa" [class.fa-chevron-down]="!overlayVisible()" [class.fa-chevron-up]="overlayVisible()" (click)="toggle()"></i>
+    </div>
+
+    <p-overlay [appendTo]="divButton" [visible]="overlayVisible()" contentStyleClass="mt-4">
+        <div class="apply-box">
+          <div class="apply-box-checkboxes">
+            <p-iconField iconPosition="left">
+              <p-inputIcon styleClass="pi pi-search" />
+              <input type="text" pInputText placeholder="{{ 'PAGES.COMPONENTS.SALES_PERSON_SELECTOR.SEARCH_FIELD' |  translate }}" style="width: 100%" (keyup)="applyFilter($event)"/>
+            </p-iconField>
+            <p-scrollPanel [style]="{ width: '100%', height: '284px' }">
+              <div class="flex flex-col gap-3">
+                <div class="item-0">
+                  <p-checkbox
+                    label="{{ 'PAGES.COMPONENTS.SALES_PERSON_SELECTOR.SELECT_ALL' |  translate }}"
+                    [(ngModel)]="selectAllCheckboxes"
+                    (onChange)="toggleAll($event)"
+                    [binary]="true"
+                  />
+                </div>
+                @for(item of filteredItems(); track $index) {
+                  <div [class]="'item-' + $index + 1">
+                    <p-checkbox
+                      [label]="item.label"
+                      name="group"
+                      [value]="item.value"
+                      [inputId]="item.value"
+                      [(ngModel)]="selectedValues"
+                      (onChange)="onSalesPersonValueChange()"
+                    />
+                  </div>
+                }
+              </div>
+            </p-scrollPanel>
+          </div>
+
+          <p-divider/>
+
+          <div class="apply-box-footer">
+            <p-button class="apply-button" label="{{ 'PAGES.COMPONENTS.SALES_PERSON_SELECTOR.APPLY_BUTTON' |  translate }}" (click)="apply()"/>
+            <p-button label="{{ 'PAGES.COMPONENTS.SALES_PERSON_SELECTOR.CLEAR_BUTTON' |  translate }}" severity="secondary" outlined class="cancel-button" (click)="uncheckAll()"/>
+          </div>
+        </div>
+    </p-overlay>
+  </section>
+</main>

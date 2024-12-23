@@ -1,0 +1,100 @@
+<main class="flex flex-row">
+  <section class="left-menu">
+    <div>
+      <div class="no-padding-margin">
+        <ul class="ul-list" style="padding-bottom: 0">
+          <li (click)="setActive(menuItem.customerInformation)" [class.active]="activeItemSelected === menuItem.customerInformation">{{ 'PAGES.CREDIT_REQUEST_DETAIL.SUBTITLE.CUSTOMER_INFORMATION' | translate }}</li>
+          <li (click)="setActive(menuItem.paymentPlan)" [class.active]="activeItemSelected === menuItem.paymentPlan">{{ 'PAGES.CREDIT_REQUEST_DETAIL.SUBTITLE.PAYMENT_PLAN' | translate }}</li>
+          <li (click)="setActive(menuItem.documentsDownload)" [class.active]="activeItemSelected === menuItem.documentsDownload">{{ 'PAGES.CREDIT_REQUEST_DETAIL.SUBTITLE.DOCUMENTS_DOWNLOAD' | translate }}</li>
+        </ul>
+      </div>
+      <div class="center-line">
+        <div style="width: 99%;">
+          <p-divider/>
+        </div>
+      </div>
+      <div>
+        <div class="mt-7 menu-title" style="text-align: center">{{ 'PAGES.CREDIT_REQUEST_DETAIL.SUBTITLE.DOCUMENTS_UPLOAD' | translate }}</div>
+        <div>
+          <ul class="ul-list" style="padding-top: 0">
+            <li (click)="setActive(menuItem.documentsUploadCreditRequest)" [class.active]="activeItemSelected === menuItem.documentsUploadCreditRequest">
+              <div class="label-badge-center">
+                {{ 'PAGES.CREDIT_REQUEST_DETAIL.SUBTITLE.CREDIT_REQUEST' | translate }}
+                @if(documentsUploadCreditRequestCount || documentsUploadCreditRequestCount === 0) {
+                  <p-badge
+                    severity="success"
+                    [value]="documentsUploadCreditRequestCount"
+                    [style]="
+                  {
+                    width: '24px',
+                    height: '16px',
+                    'line-height': '16px',
+                    'border-radius': '100px'
+                  }"
+                  />
+                } @else {
+                  <div class="flex justify-center spinner-container">
+                    <p-progressSpinner />
+                  </div>
+                }
+              </div>
+            </li>
+            <li (click)="setActive(menuItem.contractDelivery)" [class.active]="activeItemSelected === menuItem.contractDelivery">
+              <div class="label-badge-center">
+                {{ 'PAGES.CREDIT_REQUEST_DETAIL.SUBTITLE.CONTRACT_AND_DELIVERY' | translate }}
+                <p-badge
+                  [value]="contractDeliveryCount"
+                  [style]="
+                  {
+                    'background-color': '#BFBFBF',
+                    width: '24px',
+                    height: '16px',
+                    'line-height': '16px',
+                    'border-radius': '100px'
+                  }" />
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @if(!loading) {
+    <section class="section-detail">
+      <div class="div-border flex items-center">
+        <div class="detail-body flex flex-grow">
+          <span class="subtitle">{{pageTitle}}</span>
+        </div>
+      </div>
+      @switch (activeItemSelected) {
+        @case (menuItem.customerInformation) {
+          <app-customer-information [creditRequest]="creditRequest()" />
+        }
+        @case (menuItem.paymentPlan) {
+          <app-payment-plan [creditRequest]="creditRequest()" />
+        }
+        @case (menuItem.documentsDownload) {
+          <app-documents-download [creditRequest]="creditRequest()" />
+        }
+        @case (menuItem.documentsUploadCreditRequest) {
+          <app-documents-upload-credit-request [creditRequest]="creditRequest()" />
+        }
+        @case (menuItem.contractDelivery) {
+          <app-contract-delivery [creditRequest]="creditRequest()" [activeSubItem]="activeSubItemSelected" />
+        }
+      }
+    </section>
+
+    <section class="section-remarks">
+      <app-remarks [creditRequest]="creditRequest()" />
+    </section>
+
+  } @else {
+    <div class="flex justify-center spinner-container p-progress-spinner-large">
+      <p-progressSpinner class="large" />
+    </div>
+  }
+
+</main>

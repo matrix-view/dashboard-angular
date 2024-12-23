@@ -1,0 +1,12 @@
+<main>
+  <section
+    #section
+    class="ellipsis-v"
+    [class.ellipsis-v-selected]="selected()"
+    (click)="selected.set(!selected())"
+  >
+    <i class="pi pi-ellipsis-v" style="font-size: 0.9rem;" (click)="menu.toggle($event)">
+      <p-menu #menu [model]="items()" [popup]="true" [appendTo]="append()" [style]="styles()"/>
+    </i>
+  </section>
+</main>

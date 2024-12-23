@@ -1,0 +1,70 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+
+main {
+  @apply flex flex-col;
+  align-items: center;
+
+  .section-2 {
+    @apply flex flex-col;
+    margin-top: 4.5rem;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .menu-item {
+    cursor: pointer;
+  }
+
+  .has-submenu  {
+    position: relative;
+  }
+
+  .item {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .item-label {
+    font-weight: 400;
+  }
+
+  .item_selected {
+    background-color: $mma-p-green;
+    color: $mma-p-white;
+  }
+
+  .submenu {
+    padding: 8px;
+    @apply ml-2;
+    top: 100%;
+    left: 20%;
+
+    .submenu-item {
+      border-radius: $mma-border-radius;
+      position: relative;
+    }
+  }
+
+  .subItem_selected {
+    background-color: $mma-v-green15;
+    color: $mma-p-green;
+  }
+
+  .mma-btn-r {
+    @apply mr-3;
+  }
+
+  .mma-btn-l {
+    @apply ml-3;
+  }
+
+  .menu-icon {
+    font-size: 18px;
+    color: $mma-v-black50;
+  }
+
+  .icon-selected {
+    color: $mma-p-white;
+  }
+
+}

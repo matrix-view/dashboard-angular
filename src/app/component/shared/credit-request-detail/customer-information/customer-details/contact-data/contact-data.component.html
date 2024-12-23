@@ -1,0 +1,61 @@
+<main>
+  <div class="detail-body">
+    <div class="flex gap-3.5">
+      <div>
+        <img src="assets/images/vertical_orange_bar.png" alt="Orange Bar" style="width: 3px; height: 20px; border-radius: 100px;">
+      </div>
+      <div class="flex flex-col flex-grow">
+        <div class="section-title -mt-0.5">
+          Contact data
+        </div>
+        <div class="flex flex-col gap-12">
+          <div class="flex">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.STREET_NAME' | translate }}"
+              [value]="contactDataModel().addressLine1"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.NUMBER' | translate }}"
+              [value]="contactDataModel().addressLine1Nr"
+              [style]="{'width':'30%'}"
+            />
+          </div>
+          <div class="flex">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.COUNTRY' | translate }}"
+              [value]="contactDataModel().country"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.CITY' | translate }}"
+              [value]="contactDataModel().city"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.POSTAL_CODE' | translate }}"
+              [value]="contactDataModel().postalCode"
+              [style]="{'width':'30%'}"
+            />
+          </div>
+          <div class="flex mb-10">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.EMAIL' | translate }}"
+              [value]="contactDataModel().email"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.TELEPHONE' | translate }}"
+              [style]="{'width':'30%'}"
+              [value]="contactDataModel().phoneNumber1"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.CONTACT_DATA.TELEPHONE_ADD' | translate }}"
+              [value]="contactDataModel().phoneNumber2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

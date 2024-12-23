@@ -1,0 +1,38 @@
+<main>
+  <div class="detail-body">
+    <div class="section-border flex gap-3.5">
+      <div>
+        <img src="assets/images/vertical_orange_bar.png" alt="Orange Bar" style="width: 3px; height: 20px; border-radius: 100px;">
+      </div>
+      <div class="flex flex-col flex-grow">
+        <div class="section-title -mt-0.5">
+          {{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.COMPANY.TITLE' | translate }}
+        </div>
+        <div class="flex flex-col gap-12">
+          <div class="flex">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.COMPANY.LEGAL_ENTITY' | translate }}"
+              [value]="companyModel().legalEntity"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.COMPANY.COMPANY_NAME' | translate }}"
+              [value]="companyModel().companyName"
+            />
+          </div>
+          <div class="flex mb-10">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.COMPANY.VAT_NUMBER' | translate }}"
+              [value]="companyModel().vatNumber"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_DETAILS.COMPANY.VAT_LIABILILTY' | translate }}"
+              [value]="companyModel().vatLiability"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,45 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+main {
+  @apply flex flex-col;
+
+  section {
+
+    span {
+      @include set-font(16px, 500, $mma-p-black, 50);
+    }
+  }
+
+  .name {
+    @include set-font(16px, 400, $mma-p-black);
+    width: 60%;
+  }
+
+  .section-2 {
+    @apply flex flex-col;
+  }
+
+  .plates {
+    @apply flex flex-row gap-3;
+  }
+
+  .plate {
+    @apply flex flex-row justify-between;
+    width: 40%;
+  }
+
+  .plate-img {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .plate-number {
+    @include set-font(13px, 900, #171616);
+    position: relative;
+    z-index: 1;
+    left: 0.9rem;
+    top: 0.15rem;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,28 @@
+@if (showConfirmationModal) {
+  <app-confirmation-modal
+    (onEventSend)="onConfirmationModalEvent($event)"
+    title="Confirmation"
+    content="Do you want to delete the document?"
+    class="mt-2"
+  />
+}
+<main>
+    <section>
+        <app-basic-chart-example />
+    </section>
+    <section>
+        <app-doughnut-chart-example />
+    </section>
+    <section>
+        <app-pie-chart-example />
+    </section>
+    <section>
+        <app-polar-area-chart-example />
+    </section>
+    <section class="chart-size-3"  >
+        <app-line-chart-example />
+    </section>
+    <section class="chart-size-3">
+        <app-vertical-bar-chart-example />
+    </section>
+</main>

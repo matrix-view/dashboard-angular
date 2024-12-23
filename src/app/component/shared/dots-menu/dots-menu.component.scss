@@ -1,0 +1,15 @@
+.ellipsis-v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.ellipsis-v-selected {
+  @extend .ellipsis-v;
+  border-radius: 100px;
+  background-color: #FCE5DF;
+  color: #EB5128;
+}

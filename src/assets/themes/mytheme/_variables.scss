@@ -1,0 +1,132 @@
+$mma-font-family: Graphie-Regular, sans-serif;
+$mma-font-family-bold: Graphie-Bold, sans-serif;
+
+$mma-p-white: #FFFFFF;
+$mma-p-black: #000000;
+$mma-p-green: #1d5b21;
+
+$mma-s-blue: #C3EFFF;
+$mma-s-light-gray: #D9D9D6;
+
+$mma-v-green50: #429b46;
+$mma-v-green25: #9fcea1;
+$mma-v-green15: #FEE3D9;
+$mma-v-green10: #e0ece1;
+
+$mma-v-blue50: #DFEFFA;
+$mma-v-blue25: #EFF7FC;
+$mma-v-blue15: #F5FAFE;
+
+$mma-v-light-gray50: #ECECEA;
+$mma-v-light-gray20: #F8F8F7;
+
+$mma-v-black60: #646566;
+$mma-v-black50: #808080;
+$mma-v-black25: #BFBFBF;
+$mma-v-black10: #E6E6E6;
+
+$mma-st-yellow: #FDA700;
+$mma-st-blue: #0EA5E9;
+$mma-st-green: #22C55E;
+$mma-st-red: #EF4444;
+$mma-st-orange: #F97316;
+
+$mma-bg-color: rgb(191, 224, 245, 0.10);
+$mma-menu-text-color: #4B5563;
+
+
+// Inputs custom variables
+$mma-p-placeholder: $mma-p-white;
+$mma-p-dropdown-trigger-color: $mma-p-white;
+
+$mma-border-radius: 8px;
+$mma-l-border-radius: $mma-border-radius 0px 0px $mma-border-radius;
+$mma-r-border-radius: 0px $mma-border-radius $mma-border-radius 0px;
+
+$mma-btn-radius: 6px;
+
+// Theme Specific Variables
+$primaryColor: $mma-p-green;
+$primaryDarkColor: $mma-v-green50;
+$primaryDarkerColor: $mma-v-green25;
+$primaryTextColor: $mma-v-green10;
+
+$colors: (
+    "blue": $mma-st-blue,
+    "green": $mma-st-green,
+    "yellow": $mma-st-yellow,
+    "cyan": #00BCD4,
+    "pink": #E91E63,
+    "indigo": #3F51B5,
+    "teal": #009688,
+    "orange": #F57C00,
+    "bluegray": #607D8B,
+    "purple": #9C27B0,
+    "red": #FF4032,
+    "primary": $primaryColor
+);
+
+// Mandatory Designer Variables
+@import 'variables/general';
+@import 'variables/form';
+@import 'variables/button';
+@import 'variables/panel';
+@import 'variables/data';
+@import 'variables/overlay';
+@import 'variables/message';
+@import 'variables/menu';
+@import 'variables/media';
+@import 'variables/misc';
+
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family: $mma-font-family;
+    --surface-a:#ffffff;
+    --surface-b:#f8f9fa;
+    --surface-c:#e9ecef;
+    --surface-d:#dee2e6;
+    --surface-e:#ffffff;
+    --surface-f:#ffffff;
+    --text-color:#495057;
+    --text-color-secondary:#6c757d;
+    --primary-color: #{$primaryColor};
+    --primary-color-text: #{$primaryTextColor};
+    --surface-0: #ffffff;
+    --surface-50: #FAFAFA;
+    --surface-100: #F5F5F5;
+    --surface-200: #EEEEEE;
+    --surface-300: #E0E0E0;
+    --surface-400: #BDBDBD;
+    --surface-500: #9E9E9E;
+    --surface-600: #757575;
+    --surface-700: #616161;
+    --surface-800: #424242;
+    --surface-900: #212121;
+    --content-padding:#{$panelContentPadding};
+    --inline-spacing:#{$inlineSpacing};
+    --border-radius:#{$borderRadius};
+    --surface-ground:#f8f9fa;
+    --surface-section:#ffffff;
+    --surface-card:#ffffff;
+    --surface-overlay:#ffffff;
+    --surface-border:#dee2e6;
+    --surface-hover:#e9ecef;
+    --maskbg: #{$maskBg};
+    --highlight-bg: #{$highlightBg};
+    --highlight-text-color: #{$highlightTextColor};
+    --focus-ring: #{$focusShadow};
+    color-scheme: dark;
+
+
+    --p-cyan-500: #09afcd;
+    --p-cyan-400: #22cce5;
+
+    --p-orange-500: #ef7018;
+    --p-orange-400: #f18d3b;
+
+    --p-gray-500: #686f7c;
+    --p-gray-400: #979eaa;
+
+
+
+}

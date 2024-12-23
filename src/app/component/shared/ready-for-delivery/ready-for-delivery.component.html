@@ -1,0 +1,18 @@
+ <main>
+  <section class="mb-10">
+    <span>Ready to make appointments</span>
+  </section>
+  <section class="section-2">
+    @for(delivery of deliveries(); track $index) {
+      <div class="plates">
+        <div class="name">{{ delivery.name }}</div>
+        <div class="plate">
+          <div class="plate-img"><img src="assets/images/NL_Licence_plate.svg" alt="Plate"></div>
+          <div class="plate-number">{{ delivery.plate }}</div>
+          <p-button icon="pi pi-chevron-right" [rounded]="true" [style]="styles.chevron" (onClick)="navigateToRoute(delivery.route)"/>
+        </div>
+      </div>
+      <p-divider/>
+    }
+  </section>
+</main>

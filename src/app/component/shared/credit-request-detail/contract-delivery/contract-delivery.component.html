@@ -1,0 +1,10 @@
+<div class="card">
+  <p-tabView [activeIndex]="activeSubItem()">
+    <p-tabPanel header="Contract Documents" leftIcon="pi pi-file">
+      <app-contract-documents [creditRequest]="creditRequest()"/>
+    </p-tabPanel>
+    <p-tabPanel header="Delivery information" leftIcon="pi pi-car">
+      <app-delivery-information [creditRequest]="creditRequest()"/>
+    </p-tabPanel>
+  </p-tabView>
+</div>

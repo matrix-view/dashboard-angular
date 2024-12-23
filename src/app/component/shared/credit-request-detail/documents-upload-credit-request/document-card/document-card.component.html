@@ -1,0 +1,14 @@
+<main>
+  <div class="detail-body">
+    <div class="flex flex-row">
+      <section class="section-documents">
+        <app-upload-document [index]="index()"
+                             [props]="appUploadProps"
+                             (onEventSend)="handleUploadEvent($event)"
+                             [uploading]="uploading()"
+                             [indexUploading]="indexUploading()"
+        />
+      </section>
+    </div>
+  </div>
+</main>

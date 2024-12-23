@@ -1,0 +1,45 @@
+<main>
+  <div class="remarks">
+    <div class="flex flex-row">
+      <div class="item-1 flex-grow">
+        <label class="title">Remarks</label>
+      </div>
+      <div class="item-2">
+        <p-button class="modal-button"
+                  [label]="'Add New'"
+                  (onClick)="onShowModal()"/>
+      </div>
+    </div>
+    <div class="remarks-box">
+      @for (item of creditRequestRemarks; track $index) {
+        <div class="remark-item">
+          {{ item }}
+        </div>
+      }
+    </div>
+    @if (showModal) {
+      <p-dialog [header]="'Remarks'"
+                [(visible)]="showModal"
+                [draggable]="false"
+                [modal]="true"
+                [closable]="true">
+        <div class="flex flex-col gap-3 container mt-2 mb-2">
+          <div class="item-1">
+            <textarea rows="5"
+                      cols="30"
+                      [(ngModel)]="remarks"
+                      pInputTextarea
+            ></textarea>
+          </div>
+          <div class="item-2">
+            <p-button class="modal-button"
+                      [disabled]="!remarks"
+                      [label]="'Add New'"
+                      (onClick)="addNewRemark()"/>
+          </div>
+        </div>
+
+      </p-dialog>
+    }
+  </div>
+</main>

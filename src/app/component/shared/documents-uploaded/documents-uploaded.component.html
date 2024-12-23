@@ -1,0 +1,12 @@
+<main>
+  <p-progressBar
+    [value]="getPercentage(total(), uploaded())"
+    [style]="{width: '150px', height: '7px', radius: '4px 0px 0px 0px'}"
+    [color]="changeColorWhenCompleted(total(), uploaded(), completedColor())"
+  >
+    <ng-template pTemplate="content"/>
+  </p-progressBar>
+  <div class="flex justify-end mt-2" style="width: 150px;">
+    <span class="documents-label">{{ uploaded() }}/{{ total() }} documents uploaded</span>
+  </div>
+</main>

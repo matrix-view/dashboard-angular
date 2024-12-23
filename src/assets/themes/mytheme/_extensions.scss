@@ -1,0 +1,616 @@
+/* Customizations to the designer theme should be defined here */
+
+.hidden {
+  display: none !important;
+}
+
+.mma-search-auto-complete {
+  .p-autocomplete {
+    min-width: 10rem;
+  }
+}
+
+.p-progress-spinner {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+.p-progress-spinner-large {
+  margin-top: 10rem;
+  min-width: 150vh;
+  .p-progress-spinner {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+
+:host ::ng-deep .p-message-custom {
+  background-color: #E1CFE7;
+  border: solid #8A427A;
+  border-width: 0 0 0 6px;
+  color: #2c1e30;
+}
+
+:host ::ng-deep .p-message-close-icon {
+  color: #2c1e30;
+}
+
+p-card.download-document {
+  div.p-card {
+    border: 2px solid #dfeff9;
+  }
+}
+
+p-dialog {
+  .modal-button {
+    button {
+      min-width: 10rem;
+    }
+  }
+}
+
+.mma-confirmation-modal {
+  .p-dialog-content  {
+    min-width: 10rem;
+    min-height: 5rem;
+  }
+}
+
+// Pages
+
+app-root {
+  main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    @apply flex flex-row;
+    .main-section {
+      @apply flex flex-col;
+      flex-grow: 1;
+    }
+  }
+}
+
+app-login {
+
+  @apply flex;
+  align-items: center;
+  justify-content: center;
+
+  .login {
+    @apply flex flex-col;
+    align-items: center;
+    justify-content: center;
+
+    .login-card {
+      @apply flex flex-col gap-8;
+      align-items: center;
+      justify-content: center;
+
+      height: 20rem;
+      width: 20rem;
+      background-color: $mma-v-black60;
+      opacity: 95%;
+      border-radius: $borderRadius;
+
+      .login-text {
+        font-size: 2rem;
+        font-family: $mma-font-family-bold;
+        font-weight: 700;
+        line-height: 48px;
+      }
+
+      .form {
+        @apply flex flex-col gap-3;
+      }
+
+      .actions {
+        @apply flex flex-row gap-3;
+      }
+    }
+
+  }
+
+}
+
+
+app-dashboard {
+
+  main {
+    @apply flex flex-row flex-wrap gap-2;
+    justify-content: space-between;
+
+    section {
+      min-height: 30vh;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      flex-grow: 0;
+    }
+
+    .chart-size-1 {
+      flex-grow: 1;
+    }
+
+    .chart-size-2 {
+      flex-grow: 2;
+    }
+
+    .chart-size-3 {
+      flex-grow: 3
+    }
+
+  }
+
+}
+
+
+// OLD
+
+
+app-upload-document-modal {
+  p-dialog {
+
+    app-file-upload {
+
+      .p-fileupload-buttonbar {
+        @apply hidden
+      }
+
+      .p-fileupload-files {
+        @apply hidden
+      }
+
+      .upload-modal-documents-card {
+        align-items: center;
+        span {
+          font-size: 1.1rem;
+          .upload-modal-documents-link {
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 1.2rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .p-fileupload-content {
+        min-height: 20rem;
+        min-width: 40rem;
+        border: 2px dashed $mma-v-green50;
+        border-radius: 10px;
+        padding: 0;
+      }
+
+      .p-fileupload-content:not(.p-fileupload-highlight) {
+        background-color: $mma-v-green10;
+      }
+
+    }
+
+    .upload-modal-documents-icon {
+      font-size: 7rem;
+      color: $mma-p-green;
+    }
+
+    .flex.flex-col .item-3 {
+      justify-content: flex-end;
+    }
+
+  }
+}
+
+
+app-document-preview {
+  p-card {
+    .p-component {
+      width: 70%;
+    }
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .item-1 i {
+        min-width: 15%;
+        font-size: 40px;
+        color: var(--primary-color);
+      }
+
+      .item-2 {
+        min-width: 70%;
+        display: flex;
+        flex-direction: column;
+
+        .name {
+          font-weight: bold;
+        }
+
+        .date {
+          color: #BFBFBF;
+        }
+      }
+
+      .item-3 {
+        min-width: 15%;
+      }
+
+      .item-3-loading {
+        display: flex;
+        justify-content: center;
+      }
+
+    }
+  }
+
+}
+
+app-document-card {
+  .detail-body .flex-row {
+    align-items: center;
+
+    .section-documents {
+      width: 100%;
+    }
+
+  }
+}
+
+
+app-upload-document-modal {
+
+  .document-container {
+
+    background: #ffffff;
+    color: #495057;
+    box-shadow: 0 2px 10px 0 rgba(13, 67, 90, 0.0509803922);
+    border-radius: 12px;
+    padding: 1rem;
+    align-items: center;
+
+    .item-1 {
+      i {
+        font-size: 2rem;
+        color: $mma-p-green;
+      }
+    }
+
+    .item-2 {
+      min-width: 15rem;
+      align-items: center;
+
+      .flex-col {
+        align-items: center;
+      }
+
+    }
+
+    .item-3 {
+      font-size: 2rem;
+      color: $mma-p-black;
+    }
+
+  }
+
+}
+
+app-upload-document {
+
+  main {
+
+    .detail-body {
+      padding: 24px 0 24px 40px;
+    }
+
+    .section-border {
+      border-width: 0 0 1px 0;
+      border-color: $mma-v-black10;
+      border-style: solid;
+    }
+
+    .section-title {
+      @include set-font(20px, 700, null, null, 'Graphie-bold');
+      padding: 0 0 30px 0;
+      align-items: center;
+
+      .document-name {
+        min-width: 50%
+      }
+
+    }
+
+    .upload-document-button {
+      @include set-font(16px, 600, $mma-p-green);
+
+      i {
+        @include set-font(10px, 800);
+      }
+    }
+
+  }
+}
+
+
+app-remarks {
+  main {
+    .remarks {
+      display: flex;
+      flex-direction: column;
+      @apply gap-1;
+
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: "Graphie-bold", sans-serif;
+      }
+
+      .remarks-box {
+        padding: 10px 0 10px 0;
+        min-height: 8rem;
+        min-width: 15rem;
+        max-width: 30rem;
+        background-color: #BFBFBF;
+        border-radius: 12px;
+
+        display: flex;
+        flex-direction: column;
+        @apply gap-3;
+
+        .remark-item {
+          @apply ml-2;
+          @apply mt-1;
+          align-self: flex-start;
+        }
+
+      }
+
+      p-dialog {
+        .container {
+          align-items: center;
+        }
+
+        .remarks-box-detail {
+          padding: 10px 0 10px 0;
+          background-color: #BFBFBF;
+          border-radius: 12px;
+
+          display: flex;
+          flex-direction: column;
+          @apply gap-3;
+
+          .remark-item {
+            @apply ml-2;
+            @apply mt-1;
+            align-self: flex-start;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+app-view-requests {
+
+  main {
+    section.button {
+      p-badge {
+        padding: 0 6px 0 6px;
+        background-color: #F84300;
+        border-radius: 6px;
+        font-family: Source Code Pro, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+  .apply-button {
+    padding: 10.5px 17.5px 10.5px 17.5px;
+  }
+
+  .cancel-button {
+    padding: 10.5px 17.5px 10.5px 17.5px;
+    color: black;
+  }
+
+}
+
+
+app-contract-documents {
+  .section-documents {
+    @apply mt-3;
+    width: 100%;
+  }
+}
+
+
+app-delivery-information {
+
+  .label {
+    @include set-font(16px, 300, $mma-v-black50);
+  }
+
+  main {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-10;
+
+    .form {
+      @apply flex;
+      @apply flex-row;
+      flex-wrap: wrap;
+
+      div {
+        flex: 50%;
+        @apply flex;
+        @apply flex-col;
+        @apply gap-2;
+
+        margin-top: 1rem;
+
+        input {
+          width: 50%;
+        }
+      }
+
+    }
+
+    .actions {
+      @apply flex;
+      @apply flex-row;
+      @apply gap-2;
+      @apply justify-start;
+    }
+
+  }
+}
+
+
+
+app-documents-download {
+  main {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-2;
+
+    margin-left: 3rem;
+
+    p-table {
+      width: 70%;
+
+      p-inputIcon i {
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+app-archived {
+  main {
+    @apply flex;
+    @apply flex-row;
+    justify-content: end;
+  }
+
+}
+
+app-payment-plan {
+  main {
+    @apply flex;
+    @apply flex-row;
+    justify-content: center;
+    margin-top: 6rem;
+
+
+    section {
+      @apply flex;
+      @apply flex-col;
+      @apply gap-3;
+      justify-items: center;
+
+      figure {
+        @apply flex;
+        @apply flex-row;
+        justify-content: center;
+      }
+
+      .messages {
+        @apply flex;
+        @apply flex-col;
+
+        .message-title {
+          @apply flex;
+          @apply flex-row;
+          @apply font-bold;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+
+        .message-content {
+          @apply flex;
+          @apply flex-row;
+          justify-content: center;
+          color: $mma-v-black50;
+          font-size: 14px;
+        }
+      }
+    }
+
+
+  }
+}
+
+app-active-contracts {
+  main {
+
+    @apply flex;
+    @apply flex-col;
+    @apply gap-5;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .table-section {
+        p-table {
+          width: 100%;
+        }
+    }
+
+    .tr-color {
+      background-color: $mma-v-blue50;
+    }
+
+    .tr-expanded-color {
+      background-color: $mma-v-blue15;
+    }
+
+    section {
+      .title {
+        font-family: $mma-font-family-bold;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        text-align: left;
+      }
+      .content {
+        @apply flex;
+        @apply flex-row;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+
+  app-expected-date {
+    main {
+      @apply flex;
+      @apply flex-row;
+      justify-content: space-between;
+      max-width: 12rem;
+
+      border-radius: 12px;
+
+      .invalid-date {
+        @apply cursor-pointer;
+        background-color: $mma-v-green10;
+        color: $mma-p-green;
+        font-weight: bold;
+      }
+
+    }
+  }
+}
+
+.p-overlaypanel {
+  max-width: 14rem;
+  background-color: $mma-v-black60;
+  color: $mma-p-white;
+}

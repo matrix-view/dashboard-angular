@@ -1,0 +1,12 @@
+<main>
+  <p-dialog header="Upload document"
+            [(visible)]="show"
+            [draggable]="false"
+            [modal]="true"
+            [closable]="true"
+            (onHide)="onHide()"
+  >
+    <app-file-upload (onCancel)="onHide()" (onUploadEvent)="handleUploadEvent($event)"/>
+  </p-dialog>
+
+</main>

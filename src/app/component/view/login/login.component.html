@@ -1,0 +1,50 @@
+<main>
+  <section class="login">
+      <div class="login-card flex flex-col gap-8">
+          <span class="login-text">{{ 'PAGES.LOGIN.LOGIN_TEXT' | translate }}</span>
+          <div class="form">
+              <p-iconField iconPosition="left" class="ml-auto">
+                  <p-inputIcon><i class="pi pi-user"></i></p-inputIcon>
+                  <input pInputText
+                          type="text"
+                          [(ngModel)]="user"
+                          placeholder="{{ 'PAGES.LOGIN.USER' | translate }}" />
+              </p-iconField>
+              <p-iconField iconPosition="left" class="ml-auto">
+                  <p-inputIcon><i class="pi pi-key"></i></p-inputIcon>
+                  <input pInputText
+                          type="text"
+                          [(ngModel)]="pass"
+                          placeholder="{{ 'PAGES.LOGIN.PASS' | translate }}" />
+              </p-iconField>
+          </div>
+          <div class="actions">
+              <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}"
+                        [disabled]="!user || !pass"
+                        (click)="signIn()"/>
+              <p-button (click)="signInWithGoogle()">
+                  <p-inputIcon>
+                      <img src="assets/images/login_google.svg" style="width: 10px" alt="Login with google">
+                  </p-inputIcon>
+              </p-button>
+              <p-button (click)="signInWithApple()">
+                  <p-inputIcon>
+                      <img src="assets/images/login_apple.svg" style="width: 10px" alt="Login with google">
+                  </p-inputIcon>
+              </p-button>
+          </div>
+      </div>
+  </section>
+<!--  <section class="section-login-btn">-->
+<!--    <div class="flex flex-col login">-->
+<!--   -->
+<!--      <div class="flex flex-col items-center gap-5" style="margin-top: 10rem;">-->
+<!--        <span class="powered-by">{{ 'PAGES.LOGIN.POWERED_BY' | translate }}</span>-->
+<!--        <img src="assets/images/WeLeaf.png" style="width: 220px" alt="Weleaf logo">-->
+<!--      </div>-->
+<!--      <div class="flex flex-col items-center gap-5" style="margin-top: 10rem;">-->
+<!--        <span class="version">{{ appVersion }}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+</main>

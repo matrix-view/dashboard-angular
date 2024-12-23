@@ -1,0 +1,30 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+main {
+
+  section {
+
+    .title {
+      @include set-font(12px, 600, $mma-p-black, 50);
+    }
+
+    div {
+      @apply flex flex-row gap-3;
+      align-items: center;
+
+      .div1 {
+        @apply flex flex-row gap-3;
+        width: 70%;
+      }
+      .div2 {
+        @apply flex flex-row gap-3 justify-between;
+        width: 30%;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "../../../../assets/themes/mytheme/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+main {
+
+  justify-content: space-between;
+  padding: 6px 10px 6px 10px;
+
+  section {
+
+   flex-3 {
+     justify-content: flex-end;
+      align-self: flex-end;
+    }
+
+    not.flex-3 {
+      @apply flex flex-col;
+      justify-content: center;
+    }
+
+    padding: 6px 10px 6px 10px;
+    .user-name {
+      @include set-font(16px, 600, $mma-p-black);
+    }
+
+    .dealer-name {
+      @include set-font(13px, 600, $mma-v-black50);
+    }
+
+  }
+
+
+
+  .overlay-box {
+    @include set-font(14px, 400, $mma-menu-text-color, null, 'Inter');
+    box-shadow: 0 2px 12px 0 #0000001A;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 0.3rem;
+    padding: 0 0 0.5rem 0;
+  }
+
+  .avatar-selected {
+    background-color: #EFF7FC;
+    border-radius: 6px;
+  }
+
+}

@@ -1,0 +1,10 @@
+<main>
+  <div class="mt-3">
+    @if (salesQuote) {
+      <app-quote-information [salesQuote]="salesQuote" [creditRequest]="creditRequest()" />
+    }
+    @if (customer) {
+      <app-customer-details [customer]="customer" />
+    }
+  </div>
+</main>

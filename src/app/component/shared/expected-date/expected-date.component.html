@@ -1,0 +1,9 @@
+<main #target (mouseout)="showWarning(op, target, true)" (mouseenter)="showWarning(op, target, false)">
+  <span [ngClass]="{ 'invalid-date': !isDateValid }" >{{dateAsString}} </span>
+  @if (!isDateValid) {
+    <img src="../../../../assets/images/file_signature.svg" class="icon"/>
+  }
+</main>
+<p-overlayPanel #op>
+  <div>{{warnMessage()}}</div>
+</p-overlayPanel>

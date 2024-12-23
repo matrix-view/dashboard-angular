@@ -1,0 +1,11 @@
+export * from './credit-application-resource.service';
+import { CreditApplicationResourceService } from './credit-application-resource.service';
+export * from './credit-underwriting-decision-resource.service';
+import { CreditUnderwritingDecisionResourceService } from './credit-underwriting-decision-resource.service';
+export * from './enumeration-resource.service';
+import { EnumerationResourceService } from './enumeration-resource.service';
+export * from './m2-m-credit-application-resource.service';
+import { M2MCreditApplicationResourceService } from './m2-m-credit-application-resource.service';
+export * from './validation-rules-resource.service';
+import { ValidationRulesResourceService } from './validation-rules-resource.service';
+export const APIS = [CreditApplicationResourceService, CreditUnderwritingDecisionResourceService, EnumerationResourceService, M2MCreditApplicationResourceService, ValidationRulesResourceService];

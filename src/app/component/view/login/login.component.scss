@@ -1,0 +1,74 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+main {
+  display: flex;
+  margin: 0;
+
+  background-image: url("../../../../assets/images/matrix.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  section {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.section-l {
+
+  .logo-white {
+    position: relative;
+    width: 223.4px;
+    height: 33.8px;
+    top: 60px;
+    left: 60px;
+  }
+
+  .horizontal-orange-bar {
+    width: 50px;
+    height: 8px;
+  }
+
+  .fs-div {
+    position: relative;
+    left: 60px;
+    gap: 2rem;
+
+    .fs-text {
+      @include set-font(40px, 900, $mma-p-white);
+    }
+  }
+
+}
+
+.section-login-btn {
+  display: flex;
+  justify-content: center;
+
+  background-color: black;
+  opacity: 85%;
+
+  .login {
+    margin-top: 15rem;
+    gap: 2rem;
+
+    .login-text {
+      @include set-font(35px, 900, $mma-p-white);
+    }
+
+    .powered-by {
+      @include set-font(18px, 400, $mma-p-white);
+    }
+
+    .version {
+      @include set-font(10px, 400, $mma-p-white);
+    }
+
+  }
+}
+

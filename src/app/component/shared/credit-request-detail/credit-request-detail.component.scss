@@ -1,0 +1,66 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+main {
+  padding: 2rem 1.5rem 0 1.5rem;
+  min-height: 80vh;
+}
+
+.left-menu {
+  background-color: $mma-v-blue50;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  @apply flex flex-col;
+  flex-grow: 0.03;
+
+  .ul-list {
+    list-style-type: none;
+    padding: 1.5rem 1rem 0 1rem;
+
+    li {
+      @apply p-3;
+      cursor: pointer;
+    }
+  }
+
+  .center-line {
+    @apply ml-2 mr-2;
+  }
+}
+
+.section-detail {
+  background-color: $mma-p-white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  @apply flex flex-col;
+  flex-grow: 1;
+
+  .div-border {
+    border-width: 0 0 1px 0;
+    border-color: $mma-v-blue50;
+    border-style: solid;
+  }
+
+}
+
+.active {
+  background-color: $mma-p-white;
+  border-radius: 8px;
+  color: #F84300;
+}
+
+.detail-body {
+  padding: 24px 0 24px 40px;
+}
+
+.section-border {
+  border-width: 0 0 1px 0;
+  border-color: $mma-v-black10;
+  border-style: solid;
+}
+
+.section-title {
+  @include set-font(20px, 700, null, null, 'Graphie-bold');
+  padding: 0 0 30px 0;
+}
+

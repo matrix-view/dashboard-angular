@@ -1,0 +1,42 @@
+<main>
+  <section class="form">
+    <div>
+      <span class="label">VIN</span>
+      <input type="text"
+             pInputText [(ngModel)]="dataModel.vin"
+             [disabled]="!!dataModel.vin"
+      />
+    </div>
+    <div>
+      <span class="label">License Plate</span>
+      <input type="text"
+             pInputText
+             [(ngModel)]="dataModel.licensePlateNumber"
+             [disabled]="!!dataModel.licensePlateNumber"
+      />
+    </div>
+    <div>
+      <span class="label">OTT</span>
+      <input type="text" pInputText [(ngModel)]="dataModel.ott"  disabled />
+      <!--        TODO get from dynamic attributes-->
+    </div>
+    <div>
+      <span class="label">Date of delivery</span>
+      <p-calendar [(ngModel)]="dataModel.deliveryDate" />
+    </div>
+    <div>
+      <span class="label">Start Millage</span>
+      <input type="text" pInputText [(ngModel)]="dataModel.mileageOnDelivery" />
+    </div>
+    <div></div>
+  </section>
+  <section class="actions">
+    <p-button class="modal-button"
+              severity="secondary"
+              [label]="'Cancel'"
+              (onClick)="cancel()"/>
+    <p-button class="modal-button"
+              [label]="'Save changes'"
+              (onClick)="saveChanges()"/>
+  </section>
+</main>

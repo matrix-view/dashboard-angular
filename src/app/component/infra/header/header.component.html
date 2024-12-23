@@ -1,0 +1,36 @@
+<main class="flex flex-row">
+    <section></section>
+
+  <section class="flex-3 flex flex-row" [class.avatar-selected]="!menuClosed" #divUser>
+    <div>
+      <p-avatar
+        [label]="getUserInitials('Neo')"
+        styleClass="mr-2"
+        size="large"
+        shape="circle" />
+    </div>
+    <div class="flex flex-col justify-center">
+      <div class="flex gap-3" style="cursor: pointer" (click)="menuClosed = !menuClosed">
+        <span class="user-name">{{ user().name }}</span>
+        <span style="align-content: end">
+          <i class="pi" [class.pi-chevron-down]="menuClosed" [class.pi-chevron-up]="!menuClosed"></i>
+        </span>
+      </div>
+      <div class="dealer-name mt-1">
+        {{setDealer()?.name}}
+      </div>
+    </div>
+    <p-overlay
+      [appendTo]="divUser"
+      [visible]="!menuClosed"
+    >
+      <div class="overlay-box">
+          <p-button severity="info" (click)="signOut()" label="{{ 'HEADER.DEALERSHIP_MENU.LOGOUT' |  translate }}">
+              <p-inputIcon>
+                  <i class="pi pi-sign-out mr-2"></i>
+              </p-inputIcon>
+          </p-button>
+      </div>
+    </p-overlay>
+  </section>
+</main>

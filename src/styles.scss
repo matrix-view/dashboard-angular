@@ -1,0 +1,56 @@
+@use 'styles/mixins' as *;
+
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "font-awesome/css/font-awesome.css";
+@import "assets/themes/mytheme/theme";
+
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Graphie-Regular';
+  src: url('assets/fonts/graphie/GraphieRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphie-Bold';
+  src: url('assets/fonts/graphie/GraphieBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: $mma-font-family;
+  font-size: 14px;
+}
+
+.subtitle {
+  @include set-font(24px, 700, null, null, 'Graphie-bold');
+}
+
+.menu-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $mma-v-black50
+}
+
+.no-padding-margin {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.label-badge-center {
+  @apply flex justify-between items-center;
+}

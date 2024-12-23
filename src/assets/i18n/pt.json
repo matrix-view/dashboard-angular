@@ -1,0 +1,172 @@
+{
+  "HEADER": {
+    "REFRESH_BUTTON": "info updated at",
+    "DEALERSHIP_MENU": {
+      "CHANGE_DEALERSHIP": "Log out",
+      "LOGOUT": "Log out"
+    }
+  },
+  "SIDEBAR":  {
+    "DASHBOARD": "Dashboard",
+    "CREDIT_REQUEST": {
+      "PARENT_LEVEL": "Credit request",
+      "PENDING": "Pending",
+      "PRE_APPROVED": "Pre-Approved",
+      "AWAITING_DELIVERY": "Awaiting delivery"
+    },
+    "ACTIVE_CONTRACTS": "Active contracts",
+    "ARCHIVED_REQUESTS": "Archived requests"
+  },
+  "PAGES": {
+    "LOGIN": {
+      "LINE_1": "Financial services to create",
+      "LINE_2": "sustainable mobility for all",
+      "LOGIN_TEXT": "Log in to your account",
+      "LOGIN_BUTTON": "Log in",
+      "POWERED_BY": "Powered by"
+    },
+    "DASHBOARD": {
+      "TITLE": "Dashboard",
+      "WELCOME": "Welcome back,",
+      "MESSAGE": "An overview of your tasks is shown on this dashboard. Let's go!"
+    },
+    "CREDIT_REQUEST_DETAIL": {
+      "SUBTITLE": {
+        "CUSTOMER_INFORMATION": "Customer information",
+        "PAYMENT_PLAN": "Payment plan",
+        "DOCUMENTS_DOWNLOAD": "Documents download",
+        "DOCUMENTS_UPLOAD": "DOCUMENTS UPLOADS",
+        "CREDIT_REQUEST": "Credit request",
+        "CONTRACT_AND_DELIVERY": "Contract & Delivery"
+      },
+      "PAYMENT_PLAN": {
+        "EMPTY_MESSAGE_LINE_1": "The payment plan is not available",
+        "EMPTY_MESSAGE_LINE_2": "As soon as the credit request is approved the",
+        "EMPTY_MESSAGE_LINE_3": "payment plan will be visible here"
+      },
+      "CUSTOMER_INFORMATION": {
+        "TITLE": "Customer details",
+        "CUSTOMER_TYPE": {
+          "TITLE": "Customer type",
+          "PRIVATE_PERSON": "Private Person",
+          "COMPANY": "Business"
+        },
+        "QUOTE_INFORMATION": {
+          "TITLE": "Quote Information",
+          "REFERENCE": "Reference",
+          "CREATION_DATE": "Creation date",
+          "VEHICLE_DESCRIPTION": "Vehicle description",
+          "LICENSE_PLATE": "License plate",
+          "DURATION": "Duration",
+          "DISTANCE": "Distance",
+          "PRODUCT": "Product",
+          "LEASE_PRICE": "Lease price"
+        },
+        "CUSTOMER_DETAILS": {
+          "PRIVATE_PERSON": {
+            "TITLE": "Private person info",
+            "FIRST_NAME": "First name",
+            "LAST_NAME": "Last name",
+            "BIRTH_DATE": "Birth date",
+            "GENDER": "Gender"
+          },
+          "COMPANY": {
+            "TITLE": "Company info",
+            "LEGAL_ENTITY": "Legal entity",
+            "COMPANY_NAME": "Company name",
+            "VAT_NUMBER": "VAT number",
+            "VAT_LIABILILTY": "VAT liabililty"
+          },
+          "CONTACT_DATA": {
+            "TITLE": "Contact data",
+            "STREET_NAME": "Street name",
+            "NUMBER": "Number",
+            "COUNTRY": "Country",
+            "CITY": "City",
+            "POSTAL_CODE": "Postal code",
+            "EMAIL": "Email",
+            "TELEPHONE": "Telephone",
+            "TELEPHONE_ADD": "Telephone add"
+          }
+        }
+      }
+    },
+    "LISTS": {
+      "EXPORT": "Export",
+      "TITLE": {
+        "PENDING": "Pending",
+        "PRE_APPROVED": "Pre Approved",
+        "AWAITING_DELIVERY": "Awaiting Delivery",
+        "ACTIVE_CONTRACTS": "Active contracts",
+        "ARCHIVED": "Archived"
+      }
+    },
+    "ACTIVE_CONTRACTS": {
+      "EXPECTED_END_DATE": {
+        "WARN_MESSAGE": "This contract is about to end in 6 months. Discover the possibilities for this contract."
+      }
+    },
+    "COMPONENTS": {
+      "DOTS_MENU": {
+        "VIEW_DETAILS": "View details",
+        "ADD_DOCUMENTS": "Add documents",
+        "CANCEL_REQUEST": "Cancel request"
+      },
+      "SALES_PERSON_SELECTOR": {
+        "TITLE": "View requests",
+        "SEARCH_FIELD": "Search keyword",
+        "SELECT_ALL": "Select all",
+        "APPLY_BUTTON": "Apply selection",
+        "CLEAR_BUTTON": "Clear all"
+      },
+      "LIST": {
+        "DASHBOARD": {
+          "TITTLE": "Last created credits requests",
+          "REFERENCE": "Reference",
+          "CUSTOMER": "Customer",
+          "VEHICLE": "Vehicle",
+          "PRODUCT": "Product",
+          "STATUS": "Status"
+        },
+        "SHARED": {
+          "REFERENCE":  "Reference",
+          "CUSTOMER_NAME": "Customer Name",
+          "SALES_PERSON":  "Sales Person",
+          "PRODUCT": "Product",
+          "STATUS":  "Status",
+          "DOCUMENTS": "Documents",
+          "DESCRIPTION": "Description",
+          "EXPECTED_END_DATE": "Expected end date",
+          "DETAIL": {
+            "VEHICLE": "Vehicle",
+            "SUBMISSION_DATE": "Submission date",
+            "LEASE_PRICE": "Lease price",
+            "EXPECTED_DELIVERY_DATE": "Expected delivery date",
+            "DURATION_DISTANCE": "Duration/Distance",
+            "OTHER_INFO": "Other info"
+          }
+        }
+      },
+      "STATUS_OVERVIEW": {
+        "REQUESTS": {
+          "TITLE": "REQUESTS",
+          "PENDING": "Pending",
+          "AWAITING_DELIVERY": "Awaiting Delivery",
+          "PRE_APPROVED":  "Pre Approved",
+          "ARCHIVED": "Archived"
+        },
+        "CONTRACTS": {
+          "TITLE": "CONTRACTS",
+          "AWAITING_DELIVERY": "Awaiting Delivery",
+          "RUNNING": "Running"
+        }
+      }
+    }
+  },
+  "ERRORS": {
+    "PAGE_NOT_FOUND": {
+      "404_ERROR": "404 Error",
+      "PAGE_NOT_FOUND": "Page Not Found"
+    }
+  }
+}

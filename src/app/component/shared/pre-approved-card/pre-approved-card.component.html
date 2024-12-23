@@ -1,0 +1,30 @@
+<p-card [style]="{ width: 'fit-content'}">
+  <div class="flex flex-col gap-3.5">
+    <div class="flex flex-row gap-2">
+      <div class="orange-bar">
+        <img src="assets/images/vertical_orange_bar.svg" alt="Orange Bar">
+      </div>
+      <div>
+        <div class="name">{{ preApproved()?.name }}</div>
+        <div class="reference">{{ preApproved()?.reference }}</div>
+      </div>
+    </div>
+    <div>
+      <span class="product-description">{{ preApproved()?.description }}</span>
+    </div>
+    <div>
+      <p-divider/>
+    </div>
+
+    @if (hasQuantity) {
+      <div class="badge">
+        <p-badge [value]="preApproved()?.document?.quantity" [style]="styles['badge-circle']"/>
+        <div class="badge-label">{{ preApproved()?.document?.message }}</div>
+      </div>
+    } @else {
+      <div class="flex justify-center spinner-container">
+        <p-progressSpinner />
+      </div>
+    }
+  </div>
+</p-card>

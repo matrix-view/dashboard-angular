@@ -1,0 +1,16 @@
+<main>
+  @if(creditsPreApproved().length > 0) {
+    <section class="flex flex-row justify-between">
+      <span class="item-1">Recently Pre-Approved</span>
+      <span class="item-2 cursor-pointer" [routerLink]="'/protected/pending-requests/pre-approved'">View all <i class="pi pi-arrow-right"></i></span>
+    </section>
+    <section class="flex flex-row gap-2.5">
+      @for(buyer of creditsPreApproved(); track buyer.reference) {
+        <span class="cursor-pointer"
+          (click)="navigateToDetail(buyer.creditApplicationId)">
+          <app-pre-approved-card [preApproved]="buyer"/>
+        </span>
+      }
+    </section>
+  }
+</main>

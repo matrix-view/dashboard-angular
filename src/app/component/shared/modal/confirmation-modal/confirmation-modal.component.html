@@ -1,0 +1,21 @@
+<main>
+  <p-dialog [header]="title()"
+            [(visible)]="show"
+            [draggable]="false"
+            [modal]="true"
+            [closable]="true"
+            (onHide)="onHide()"
+            position="top"
+            class="mma-confirmation-modal"
+  >
+    <div class="flex flex-col mt-5">
+      <div class="item-1">
+        {{content()}}
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button class="modal-button" [label]="labelConfirm()" (onClick)="onConfirm()"/>
+      <p-button class="modal-button" [label]="labelCancel()" severity="danger" (onClick)="onHide()" />
+    </ng-template>
+  </p-dialog>
+</main>

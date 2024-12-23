@@ -1,0 +1,52 @@
+<main>
+  <section class="section-1">
+        <!--TODO add logo-->
+  </section>
+  <section #section2 class="section-2" >
+    <div class="menu-item" [routerLink]="routes.DASHBOARD">
+      <div class="item" [class.item_selected]="verifyCurrentRoute([routes.DEFAULT, routes.DASHBOARD])">
+        <i class="menu-icon fa fa-home mma-btn-r" [class.icon-selected]="verifyCurrentRoute([routes.DEFAULT, routes.DASHBOARD])"></i>
+        <span class="item-label">{{'SIDEBAR.DASHBOARD' | translate }}</span>
+      </div>
+    </div>
+    <div class="menu-item has-submenu">
+      <div #item3 class="item" [class.item_selected]="verifyCurrentRoute(allSubRoutes)" (click)="openMenu()">
+        <i class="menu-icon fa fa-exchange mma-btn-r" [class.icon-selected]="verifyCurrentRoute(allSubRoutes)"></i>
+        <span class="item-label">Item 2</span>
+        <i class="fa fa-chevron-up mma-btn-l" [class.fa-chevron-down]="subClosed"></i>
+      </div>
+      <div #submenu class="submenu" [hidden]="subClosed">
+        <div class="submenu-item" [class.subItem_selected]="verifyCurrentRoute([subRoutes.PENDING])">
+          <div style="padding: 10px" [routerLink]="subRoutes.PENDING">
+            <i class="menu-icon pi pi-sync mma-btn-r"></i>
+            <span class="item-label">Sub item 1</span>
+          </div>
+        </div>
+        <div class="submenu-item" [class.subItem_selected]="verifyCurrentRoute([subRoutes.PRE_APPROVED])">
+          <div style="padding: 10px" [routerLink]="subRoutes.PRE_APPROVED">
+            <i class="menu-icon pi pi-file mma-btn-r"></i>
+            <span class="item-label">Sub item 2</span>
+          </div>
+        </div>
+        <div class="submenu-item" [class.subItem_selected]="verifyCurrentRoute([subRoutes.AWAITING_DELIVERY])">
+          <div style="padding: 10px" [routerLink]="subRoutes.AWAITING_DELIVERY">
+            <i class="menu-icon pi pi-check-circle mma-btn-r"></i>
+            <span class="item-label">Sub item N</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="item" [class.item_selected]="verifyCurrentRoute([routes.ACTIVE_CONTRACTS])" [routerLink]="routes.ACTIVE_CONTRACTS">
+        <i class="menu-icon fa fa-star mma-btn-r" [class.icon-selected]="verifyCurrentRoute([routes.ACTIVE_CONTRACTS])"></i>
+        <span class="item-label">Item 3</span>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="item" [class.item_selected]="verifyCurrentRoute([routes.ARCHIVED_REQUESTS])" [routerLink]="routes.ARCHIVED_REQUESTS">
+        <i class="menu-icon fa fa-archive mma-btn-r" [class.icon-selected]="verifyCurrentRoute([routes.ARCHIVED_REQUESTS])"></i>
+        <span class="item-label">Item N</span>
+      </div>
+    </div>
+  </section>
+</main>

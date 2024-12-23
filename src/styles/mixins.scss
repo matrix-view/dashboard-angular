@@ -1,0 +1,13 @@
+@mixin set-font($font-size, $font-weight, $color: null, $lighten: null, $font-family: null) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  @if($font-family) {
+    font-family: $font-family, sans-serif;
+  }
+  @if ($lighten) {
+    color: lighten($color, $lighten);
+  }
+  @else if ($color) {
+    color: $color;
+  }
+}

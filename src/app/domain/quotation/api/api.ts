@@ -1,0 +1,13 @@
+export * from './enumeration-resource.service';
+import { EnumerationResourceService } from './enumeration-resource.service';
+export * from './mobility-plan-resource.service';
+import { MobilityPlanResourceService } from './mobility-plan-resource.service';
+export * from './ordered-quotation-resource.service';
+import { OrderedQuotationResourceService } from './ordered-quotation-resource.service';
+export * from './quotation-template-resource.service';
+import { QuotationTemplateResourceService } from './quotation-template-resource.service';
+export * from './sales-quote-resource.service';
+import { SalesQuoteResourceService } from './sales-quote-resource.service';
+export * from './timeline-resource.service';
+import { TimelineResourceService } from './timeline-resource.service';
+export const APIS = [EnumerationResourceService, MobilityPlanResourceService, OrderedQuotationResourceService, QuotationTemplateResourceService, SalesQuoteResourceService, TimelineResourceService];

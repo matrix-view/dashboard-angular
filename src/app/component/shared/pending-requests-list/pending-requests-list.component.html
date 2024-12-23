@@ -1,0 +1,58 @@
+<main class="flex flex-col gap-2">
+  <section class="flex flex-row justify-between mt-8 mb-5">
+    <p-autoComplete placeholder="Search keyword">
+    </p-autoComplete>
+    <p-dropdown [options]="exportTypes"
+                optionLabel="name"
+                [showClear]="true"
+                placeholder="Export">
+    </p-dropdown>
+  </section>
+  <section class="flex flex-row justify-between mb-5 table-section">
+    <p-table
+      #credit
+      [value]="tableConfig().data()"
+      styleClass="p-datatable-striped"
+      [tableStyle]="{'min-width': '50rem'}"
+    >
+      <ng-template pTemplate="header">
+        <tr class="header">
+          @for (header of headers; track $index) {
+            <th>{{ header }}</th>
+          }
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-creditRequest>
+        <tr>
+          <td>{{creditRequest.reference}}</td>
+          <td>{{creditRequest.customer}}</td>
+          <td>{{creditRequest.vehicle}}</td>
+          <td>{{creditRequest.product}}</td>
+          <td>
+            @switch (creditRequest.status) {
+              @case ('Pending') {
+                <app-status warning [label]="creditRequest.status" icon="pi pi-sync" />
+              }
+              @case ('Pre-Approved') {
+                <app-status info [label]="creditRequest.status" icon="pi pi-file-o" />
+              }
+              @case ('Rejected') {
+                <app-status danger [label]="creditRequest.status" icon="pi pi-times-circle" />
+              }
+              @case('Awaiting delivery') {
+                <app-status success [label]="creditRequest.status" icon="pi pi-car" />
+              }
+              @case('Approved') {
+                <app-status success [label]="creditRequest.status" icon="pi pi-check-circle" />
+              }
+              @default {
+                <app-status success [label]="creditRequest.status" icon="pi pi-car" />
+              }
+            }
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </section>
+</main>

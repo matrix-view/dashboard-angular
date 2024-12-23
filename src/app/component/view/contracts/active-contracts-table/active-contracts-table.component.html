@@ -1,0 +1,115 @@
+<main class="flex flex-col gap-1">
+  <section class="flex flex-row justify-between mt-1 mb-5">
+    <div class="flex">
+      <p-iconField iconPosition="left" class="ml-auto">
+        <p-inputIcon>
+          <i class="pi pi-search"></i>
+        </p-inputIcon>
+        <input
+          pInputText
+          type="text"
+          [(ngModel)]="searchValue"
+          (ngModelChange)="dt?.filterGlobal($event, 'contains')"
+          placeholder="Search keyword" />
+      </p-iconField>
+    </div>
+    <p-dropdown [options]="export.exportTypes"
+                [showClear]="true"
+                (onChange)="onExport($event)"
+                [(ngModel)]="selectedExportType"
+                optionLabel="name"
+                placeholder="{{ 'PAGES.LISTS.EXPORT' |  translate }}"
+    >
+      <ng-template pTemplate="selectedItem">
+        <div class="flex align-items-center gap-2" *ngIf="selectedExportType">
+          <i [class]="'pi pi-file-' + selectedExportType.name.toLowerCase()"></i>
+          <div>{{ selectedExportType.name }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-exportType pTemplate="item">
+        <div class="flex align-items-center gap-2">
+          <i [class]="'pi pi-file-' + exportType.name.toLowerCase()"></i>
+          <div>{{ exportType.name }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+  </section>
+  <section class="flex flex-row justify-between mb-5 table-section">
+    @if (tableData.headers && tableData.values) {
+      <p-table
+        #dt
+        styleClass="p-datatable-striped"
+        [value]="tableData.values"
+        [paginator]="true"
+        [rows]="dynamicTableRowNumbersDefault"
+        [customSort]="true"
+        [tableStyle]="{'min-width': '50rem'}"
+        [globalFilterFields]="searchFilters"
+        (sortFunction)="customSort($event)"
+        [dataKey]="'reference'"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 5rem"></th>
+            @for (item of tableData.headers; track $index) {
+              <th [pSortableColumn]="item.field" style="width: 20%;">
+                {{ item.header }} <p-sortIcon [field]="item.field" />
+              </th>
+            }
+            <th style="width: 5rem"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-expanded="expanded">
+          <tr [class.tr-color]="expanded">
+            <td>
+              <p-button type="button" pRipple [pRowToggler]="rowData" [text]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-up' : 'pi pi-chevron-down'" />
+            </td>
+            @for(item of tableData.headers; track $index) {
+              <td>
+              @if (item.field === 'expectedEndDate') {
+                <app-expected-date
+                  [date]="getNestedValue(rowData, item.field)"
+                  [warnMonths]="expectedWarnMonths"
+                  warnMessage="{{ 'PAGES.ACTIVE_CONTRACTS.EXPECTED_END_DATE.WARN_MESSAGE' | translate }}"
+                />
+              } @else {
+                {{ getNestedValue(rowData, item.field) }}
+              }
+              </td>
+            }
+            <td class="app-dots">
+              <app-dots-menu
+                [items]="menuItems"
+                [append]="dt"
+                (click)="selectItem(rowData)"
+              />
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-rowData>
+          <tr class="tr-expanded-color">
+            <td [attr.colspan]="tableData.headers.length+1">
+              <div class="flex flex-col">
+                @for(line of tableData.expansionRow; track $index; let last = $last) {
+                  <div class="flex">
+                    <span style="width: 4.5rem"></span>
+                    @for(item of line; track $index) {
+                      <app-label-value
+                        [label]="item.label"
+                        [value]="getNestedValue(rowData, item.value)"
+                        [style]="{'width':'30%'}"
+                      />
+                    }
+                  </div>
+                  @if (!last) {
+                    <p-divider/>
+                  }
+                }
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    }
+  </section>
+</main>

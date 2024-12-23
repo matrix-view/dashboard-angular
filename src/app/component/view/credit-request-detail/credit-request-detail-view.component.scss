@@ -1,0 +1,23 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.breadcrumb-section {
+  @apply flex flex-row gap-2;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  color: $mma-v-black50;
+
+  .breadcrumb-label {
+    @include set-font(11px, 400);
+    line-height: 15.6px;
+  }
+}
+
+.arrow-section {
+  @apply flex flex-row gap-2;
+  padding: 1rem 1.5rem 0 1.5rem;
+
+  .arrow-label {
+    @include set-font(27px, 100, null, null, 'Graphie-Bold');
+    line-height: 15px;
+  }
+}

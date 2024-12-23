@@ -1,0 +1,39 @@
+<main>
+  @if (creditRequest) {
+    <section class="breadcrumb-section">
+      <div>
+        <i class="pi pi-home mt-0.5"></i>
+      </div>
+      <div>
+        <i class="pi pi-chevron-right" style="font-size: 0.6rem"></i>
+      </div>
+      <div>
+        <span class="breadcrumb-label">{{title}}</span>
+      </div>
+    </section>
+    <section class="arrow-section">
+      <div>
+        <i
+          class="pi pi-arrow-left"
+          style="color: #F84300; font-size: 20px; font-weight: 400; line-height: 15px; cursor: pointer;"
+          [routerLink]="'/protected/dashboard'"
+        >
+        </i>
+      </div>
+      <div>
+        <span class="arrow-label">{{title}}</span>
+      </div>
+    </section>
+    <section>
+      <app-credit-request-detail
+        [creditRequest]="creditApplicationDetail()"
+        [activeItem]="activeItem"
+        [activeSubItem]="activeSubItem"
+      />
+    </section>
+  } @else {
+    <div class="flex justify-center spinner-container p-progress-spinner-large">
+      <p-progressSpinner class="large" />
+    </div>
+  }
+</main>

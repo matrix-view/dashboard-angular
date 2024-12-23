@@ -1,0 +1,43 @@
+@use "../../../../assets/themes/mytheme/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.name {
+  @include set-font(17px, 600);
+}
+
+.reference {
+  @include set-font(13px, 600);
+}
+
+.product-description {
+  @include set-font(15px, 500);
+}
+
+.badge-label {
+  @include set-font(13px, 400, $mma-v-black60);
+}
+
+.orange-bar {
+  @apply flex flex-wrap justify-items-center;
+  align-content: center;
+}
+
+.badge {
+  @apply flex flex-row gap-2;
+  align-items: center;
+  min-width: 19rem;
+
+  .badge-circle {
+    @apply flex justify-center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 100px;
+    background-color: #FCE5DF;
+    color: #EB5128;
+  }
+}
+
+.spinner-container {
+  min-width: 19rem;
+}

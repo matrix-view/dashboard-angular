@@ -1,0 +1,18 @@
+<main>
+    @if (isAuthenticated) {
+        <section class="sidebar-section">
+            <app-sidebar/>
+        </section>
+    }
+    <section class="main-section">
+        @if (isAuthenticated) {
+            <app-header />
+        }
+        <div class="content">
+            @if (messages.length) {
+                <p-messages [value]="messages" class="mt-1 mb-1" />
+            }
+            <router-outlet/>
+        </div>
+    </section>
+</main>

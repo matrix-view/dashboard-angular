@@ -1,0 +1,64 @@
+<p-table
+  #credit
+  [value]="creditRequests()"
+  styleClass="p-datatable-striped"
+  [tableStyle]="{'min-width': '50rem'}"
+>
+  <ng-template pTemplate="header">
+    <tr class="header">
+      @for (header of headers; track $index) {
+        <th>{{ !header ? header : 'PAGES.COMPONENTS.LIST.DASHBOARD.' + header | translate  }}</th>
+      }
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-creditRequest>
+    <tr>
+      <td>{{creditRequest.reference}}</td>
+      <td>{{creditRequest.customer}}</td>
+      <td>{{creditRequest.vehicle}}</td>
+      <td>
+        @if (creditRequest.product) {
+          {{creditRequest.product}}
+        } @else {
+          <div class="flex justify-center spinner-container">
+            <p-progressSpinner />
+          </div>
+        }
+      </td>
+      <td>
+        @switch (creditRequest.status) {
+          @case ('Pending') {
+            <app-status warning [label]="creditRequest.status" icon="pi pi-sync" />
+          }
+          @case ('Pre-Approved') {
+            <app-status info [label]="creditRequest.status" icon="pi pi-file-o" />
+          }
+          @case ('Rejected') {
+            <app-status danger [label]="creditRequest.status" icon="pi pi-times-circle" />
+          }
+          @case('Awaiting delivery') {
+            <app-status success [label]="creditRequest.status" icon="pi pi-car" />
+          }
+          @case('Approved') {
+            <app-status success [label]="creditRequest.status" icon="pi pi-check-circle" />
+          }
+          @default {
+            <app-status success [label]="creditRequest.status" icon="pi pi-car" />
+          }
+        }
+      </td>
+      <td>
+        <app-dots-menu
+          [items]="menuItems"
+          [append]="credit"
+          [styles]="{
+            'margin-top': '10px',
+            'margin-left': '-157px'
+          }"
+          (click)="selectItem(creditRequest)"
+        />
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

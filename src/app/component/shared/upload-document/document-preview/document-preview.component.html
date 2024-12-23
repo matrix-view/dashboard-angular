@@ -1,0 +1,19 @@
+@if (showConfirmationModal) {
+  <app-confirmation-modal
+    (onEventSend)="onConfirmationModalEvent($event)"
+    title="Confirmation"
+    content="Do you want to delete the document?"
+    class="mt-2"
+  />
+}
+<p-card class="download-document">
+  <div class="card-container">
+    <div class="item-1">
+      <i class="pi pi-file"></i>
+    </div>
+    <div class="item-2 ml-3">
+      <span class="name bold">{{document().name}}</span>
+      <span class="date mt-1"> {{document().date}}</span>
+    </div>
+  </div>
+</p-card>

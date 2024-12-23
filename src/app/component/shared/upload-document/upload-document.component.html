@@ -1,0 +1,56 @@
+@if(!isStipulationStatusNotToBeConsidered) {
+  <main class="flex flex-col">
+    @if (showModal) {
+      <app-upload-document-modal (onEventSend)="onModalEvent($event)"/>
+    }
+    <div class="section-title -mt-0.5 flex flex-row">
+      <p-badge
+        styleClass="index-badge"
+        [value]="index()"
+        size="large"
+        [style]="{
+        'background-color': '#FAD3C9',
+        color: '#EF4444'
+      }"
+      />
+      <span class="ml-3 document-name">
+      {{props().name}}
+    </span>
+      @if(iconConfig) {
+        <i [className]="iconConfig" class="pi pi-info-circle ml-3 mr-3" style="font-size: 1.3rem;"></i>
+      }
+      @if(buttonConfig) {
+        <p-button [label]="buttonConfig.label"
+                  iconPos="left"
+                  [icon]="buttonConfig.icon"
+                  size="small"
+                  class="cursor-context-menu ml-3"
+                  [style]="{'margin':'0 1.5rem 0 0'}"/>
+      }
+    </div>
+    <div class="flex flex-col gap-5 ml-10">
+      @if(uploading() && indexUploading() === Number(index())) {
+        <p-card class="download-document" [style]="{ width: '70%' }">
+          <div class="card-container">
+            <div class="flex justify-center justify-self-center spinner-container ">
+              <p-progressSpinner/>
+            </div>
+          </div>
+        </p-card>
+      }
+      @if(hasDocuments) {
+        @for (document of documents(); track $index) {
+          <app-document-preview [document]="document" (onEventSend)="handleDocumentEvent($event)"/>
+        }
+      }
+      @if (!isStipulationStatusDoesNotRequireUpload) {
+        <div class="flex">
+      <span class="upload-document-button cursor-pointer" (click)="onShowModal()">
+        <i class="pi pi-plus"></i>
+        Upload a document
+      </span>
+        </div>
+      }
+    </div>
+  </main>
+}

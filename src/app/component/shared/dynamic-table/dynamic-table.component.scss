@@ -1,0 +1,21 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+main {
+
+  .table-section {
+
+    p-table {
+      width: 100%;
+    }
+  }
+
+  .tr-color {
+    background-color: $mma-v-blue50;
+  }
+
+  .tr-expanded-color {
+    background-color: $mma-v-blue15;
+  }
+
+}

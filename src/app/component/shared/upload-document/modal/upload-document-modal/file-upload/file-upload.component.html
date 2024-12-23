@@ -1,0 +1,89 @@
+<main>
+  <div class="flex flex-col mt-5 mb-5 gap-3">
+    <div class="item-1 mb-5">
+      <p-fileUpload [multiple]="true"
+                    [maxFileSize]="maxSize"
+                    [showUploadButton]="false"
+                    [showCancelButton]="false"
+                    (onUpload)="onTemplatedUpload()"
+                    #uploadElement
+      >
+
+        <ng-template pTemplate="content"
+                     let-files
+                     let-removeFileCallback="removeFileCallback">
+
+          <div class="flex flex-row justify-center mb-2">
+            <div class="flex flex-col gap-2">
+              <div class="item-1">
+                <div class="flex align-items-center justify-content-center flex-col upload-modal-documents-card">
+                  <i class="pi pi-cloud-upload border-2 border-circle p-5 text-8xl text-400 border-400"></i>
+                  <span class="mt-1">You can drag and drop the file</span>
+                  <span class="mt-1">or
+                <span class="upload-modal-documents-link" (click)="choose()">
+                  click here
+                </span>
+                to browse</span>
+                  <span class="mt-1">File size is limited to {{maxSizeFormatted}}</span>
+                </div>
+              </div>
+              <div class="item-2">
+                <div *ngIf="files?.length > 0">
+                  <div class="flex flex-col gap-2">
+                    <div *ngFor="let item of files; let i = index"
+                         class="card m-0 px-6 flex flex-column border-1 surface-border align-items-center gap-3">
+
+                      <div class="flex flex-row document-container mt-2">
+                        <div class="item-1 mr-2">
+                          <p-inputIcon>
+                            <i class="pi pi-file"></i>
+                          </p-inputIcon>
+                        </div>
+                        <div class="item-2 mr-2">
+                          <div class="flex flex-col">
+                            <div>
+                              {{ item.name }}
+                            </div>
+                            <div>
+                              {{ formatSize(item.size) }}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-3">
+                          <p-inputIcon class="cursor-pointer" (click)="removeFile($event, i)">
+                            <i class="pi pi-times" style="font-size: 1.3rem;"></i>
+                          </p-inputIcon>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+      </p-fileUpload>
+    </div>
+    <div class="item-2">
+      <div class="flex flex-col">
+        <div class="item-1">
+          <label>Remarks</label>
+        </div>
+        <div class="item-2 mt-2">
+            <textarea  rows="2"
+                       cols="30"
+                       [(ngModel)]="remarks"
+                       pInputTextarea
+            >
+            </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="item-3 flex flex-row gap-2">
+      <p-button label="Close" [outlined]="true" severity="danger" (click)="onCancel.emit()" />
+      <p-button label="Upload" (click)="sendUploadEvent()" [disabled]="!_files?.length"/>
+    </div>
+  </div>
+
+</main>

@@ -1,0 +1,23 @@
+@use "../../../../assets/themes/mytheme/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+main {
+  @apply flex flex-col gap-5;
+
+  section {
+
+    .item-1 {
+      font-family: Graphie-Bold, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .item-2 {
+      @include set-font(16px, 600, $primaryColor);
+
+      i {
+        @include set-font(10px, 800);
+      }
+    }
+  }
+}

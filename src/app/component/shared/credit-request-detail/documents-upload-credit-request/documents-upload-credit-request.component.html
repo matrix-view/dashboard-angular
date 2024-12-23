@@ -1,0 +1,14 @@
+<main>
+  <div class="mt-3">
+    @for (item of stipulations(); track $index) {
+      <app-document-card [stipulation]="item"
+                         [applicantCreditScoreId]="item.applicantCreditScoreId"
+                         [index]="String($index + 1)"
+                         [creditRequest]="creditRequest()"
+                         (onEventSend)="handleUploadEvent($event)"
+                         [uploading]="uploading"
+                         [indexUploading]="indexUploading?? -1"
+      />
+    }
+  </div>
+</main>

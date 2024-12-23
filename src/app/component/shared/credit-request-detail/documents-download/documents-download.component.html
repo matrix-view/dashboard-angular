@@ -1,0 +1,27 @@
+<main>
+  <p-table
+    [value]="data"
+    styleClass="p-datatable-striped"
+    [tableStyle]="{'min-width': '50rem'}"
+  >
+    <ng-template pTemplate="header">
+      <tr class="header">
+        @for (header of headers; track $index) {
+          <th>{{ header }}</th>
+        }
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-creditRequest>
+      <tr>
+        <td>{{creditRequest.name}}</td>
+        <td>{{creditRequest.date}}</td>
+        <td>
+          <p-inputIcon>
+            <i class="pi pi-download" ></i>
+          </p-inputIcon>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</main>

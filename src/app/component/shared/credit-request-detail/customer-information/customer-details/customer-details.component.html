@@ -1,0 +1,29 @@
+<main>
+  <div class="detail-body">
+    <div class="section-border flex gap-3.5">
+      <div>
+        <img src="assets/images/vertical_orange_bar.png" alt="Orange Bar" style="width: 3px; height: 20px; border-radius: 100px;">
+      </div>
+      <div class="flex flex-col flex-grow">
+        <div class="section-title -mt-0.5">
+          {{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.TITLE' | translate }}
+        </div>
+        <div class="flex flex-col gap-12">
+          <div class="flex mb-10">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.CUSTOMER_TYPE.TITLE' | translate }}"
+              [value]="customerTypeTitle"
+              [style]="{'width':'30%'}"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @if (verifyCustomerType(CustomerType.COMPANY)) {
+    <app-company [customer]="customer()" />
+  } @else if (verifyCustomerType(CustomerType.PRIVATE_PERSON)) {
+    <app-private-person [customer]="customer()" />
+  }
+  <app-contact-data [customer]="customer()" />
+</main>

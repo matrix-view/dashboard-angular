@@ -1,0 +1,9 @@
+@use '../../../../assets/themes/mytheme/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+main {
+
+  .documents-label {
+    @include set-font(12px, 600, $mma-v-black60);
+  }
+}

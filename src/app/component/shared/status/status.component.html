@@ -1,0 +1,9 @@
+<div class="status"
+     [class.warning]="warning()"
+     [class.danger]="danger()"
+     [class.info]="info()"
+     [class.success]="success()"
+>
+  <i class="icon" [class]="icon()"></i>
+  {{label()}}
+</div>

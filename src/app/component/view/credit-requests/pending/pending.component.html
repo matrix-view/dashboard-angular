@@ -1,0 +1,29 @@
+<main class="flex flex-col gap-5">
+  <section class="flex flex-row justify-between mt-8 mb-5">
+    <span class="title">{{ "PAGES.LISTS.TITLE.PENDING" |  translate }}</span>
+    <app-view-requests />
+  </section>
+  <section class="flex flex-row gap-10">
+    <div class="item-1">
+      <p-card>
+        @if (loaded) {
+          <app-dynamic-table
+            exportFilename='{{ "PAGES.LISTS.TITLE.PENDING" |  translate }}'
+            [tableData]="tableConfig.data"
+            [withPagination]="true"
+            [withSort]="true"
+            [withRowExpansion]="true"
+            [allowCancel]="true"
+            [searchFilters]="['reference', 'customer', 'creditApplication.brokerContact.identification']"
+            [expansionRowId]="'reference'"
+            (onPageChange)="onPageChange($event)"
+          />
+        } @else {
+          <div class="flex justify-center justify-self-center spinner-container p-progress-spinner-large">
+            <p-progressSpinner/>
+          </div>
+        }
+      </p-card>
+    </div>
+  </section>
+</main>

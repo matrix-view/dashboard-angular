@@ -1,0 +1,60 @@
+<div class="detail-body">
+  <div class="section-border flex gap-3.5">
+    <div>
+      <img src="assets/images/vertical_orange_bar.png" alt="Orange Bar" style="width: 3px; height: 20px; border-radius: 100px;">
+    </div>
+    @if (model()) {
+      <div class="flex flex-col flex-grow">
+        <div class="section-title -mt-0.5">
+          {{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.TITLE' | translate }}
+        </div>
+        <div class="flex flex-col gap-12">
+          <div class="flex">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.REFERENCE' | translate }}"
+              [value]="model().reference"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.CREATION_DATE' | translate }}"
+              [value]="model().creationDate"
+            />
+          </div>
+          <div class="flex">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.VEHICLE_DESCRIPTION' | translate }}"
+              [value]="model().vehicleDescription"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.LICENSE_PLATE' | translate }}"
+              value="{{licensePlate}}"
+            />
+          </div>
+          <div class="flex">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.DURATION' | translate }}"
+              [value]="model().duration"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.DISTANCE' | translate }}"
+              [value]="model().distance"
+            />
+          </div>
+          <div class="flex mb-10">
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.PRODUCT' | translate }}"
+              [value]="model().product"
+              [style]="{'width':'30%'}"
+            />
+            <app-label-value
+              label="{{ 'PAGES.CREDIT_REQUEST_DETAIL.CUSTOMER_INFORMATION.QUOTE_INFORMATION.LEASE_PRICE' | translate }}"
+              [value]="model().leasePrice"
+            />
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

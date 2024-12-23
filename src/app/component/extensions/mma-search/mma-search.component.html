@@ -1,0 +1,14 @@
+<main class="mma-search">
+  <section class="flex flex-row justify-between">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="menu-icon pi pi-search mma-btn-r"></i></span>
+      <p-autoComplete [(ngModel)]="selectedItem"
+                      class="mma-search-auto-complete"
+                      placeholder="Search for anything"
+                      styleClass="mma-search-auto-complete"
+                      (completeMethod)="search($event)">
+      </p-autoComplete>
+    </div>
+  </section>
+
+</main>

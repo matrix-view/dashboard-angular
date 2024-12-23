@@ -1,0 +1,49 @@
+{
+  "HEADER": {
+    "REFRESH_BUTTON": "info updated at",
+    "DEALERSHIP_MENU": {
+      "CHANGE_DEALERSHIP": "Log out",
+      "LOGOUT": "Log out"
+    }
+  },
+  "SIDEBAR":  {
+    "DASHBOARD": "Dashboard",
+    "CREDIT_REQUEST": {
+      "PARENT_LEVEL": "Credit request",
+      "PENDING": "Pending",
+      "PRE_APPROVED": "Pre-Approved",
+      "AWAITING_DELIVERY": "Awaiting delivery"
+    },
+    "ACTIVE_CONTRACTS": "Active contracts",
+    "ARCHIVED_REQUESTS": "Archived requests"
+  },
+  "PAGES": {
+    "LOGIN": {
+      "LOGIN_TEXT": "Enter the Matrix!",
+      "LOGIN_BUTTON": "Log in",
+      "USER": "User email",
+      "PASS": "Password"
+    },
+    "DASHBOARD": {
+      "TITLE": "Dashboard",
+      "WELCOME": "Welcome back,",
+      "MESSAGE": "An overview of your tasks is shown on this dashboard. Let's go!"
+    },
+    "LISTS": {
+      "EXPORT": "Export",
+      "TITLE": {
+        "PENDING": "Pending",
+        "PRE_APPROVED": "Pre Approved",
+        "AWAITING_DELIVERY": "Awaiting Delivery",
+        "ACTIVE_CONTRACTS": "Active contracts",
+        "ARCHIVED": "Archived"
+      }
+    }
+  },
+  "ERRORS": {
+    "PAGE_NOT_FOUND": {
+      "404_ERROR": "404 Error",
+      "PAGE_NOT_FOUND": "Page Not Found"
+    }
+  }
+}
