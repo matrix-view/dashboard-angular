@@ -95,7 +95,17 @@ app-menubar {
     border-radius: $mma-menubar-border-radius;
 
     p-menubarsub {
-      color: aliceblue;
+
+      .p-submenu-list {
+        padding: 0;
+      }
+      .p-menuitem-content {
+        background: $mma-menubar-overlay-background;
+      }
+
+      span {
+        color: aliceblue;
+      }
     }
 
   }

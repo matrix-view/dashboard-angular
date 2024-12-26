@@ -64,9 +64,6 @@ export class MenubarComponent {
             icon:'pi pi-fw pi-trash'
           },
           {
-            separator:true
-          },
-          {
             label:'Export',
             icon:'pi pi-fw pi-external-link'
           }
@@ -161,10 +158,6 @@ export class MenubarComponent {
             ]
           }
         ]
-      },
-      {
-        label:'Quit',
-        icon:'pi pi-fw pi-power-off'
       }
     ];
   }
