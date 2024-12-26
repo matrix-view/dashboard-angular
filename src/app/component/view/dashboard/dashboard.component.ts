@@ -1,34 +1,10 @@
-import {Component, computed, inject} from '@angular/core';
-import {
-  CreditRequestListComponent,
-  CreditRequestListComponentEvent,
-  CreditRequestListComponentEventType
-} from "../../shared/credit-request-list/credit-request-list.component";
+import {Component} from '@angular/core';
 import {CardModule} from "primeng/card";
-import {WelcomeBannerComponent} from "../../shared/welcome-banner/welcome-banner.component";
-import {RecentlyPreApprovedComponent} from "../recently-pre-approved/recently-pre-approved.component";
-import {ViewRequestsComponent} from "../../shared/view-requests/view-requests.component";
-import {StatusOverviewComponent} from "../../shared/status-overview/status-overview.component";
-import {Delivery, ReadyForDeliveryComponent} from "../../shared/ready-for-delivery/ready-for-delivery.component";
-import {CreditRetailStore} from "../../../store/credit-retail/credit-retail-state";
-import {
-  CreditRequest, CreditRequestStatus,
-  mapCreditRequestResponseToCreditRequest, mapCreditRequestStateToDelivery,
-  mapCreditRetailResponseToStatusOverviewContracts,
-  mapCreditRetailResponseToStatusOverviewRequests,
-} from "../../../service/mappers/credit-retail-mapper";
+import {Delivery} from "../../shared/ready-for-delivery/ready-for-delivery.component";
 import {Router} from "@angular/router";
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
-import {toObservable, toSignal} from "@angular/core/rxjs-interop";
-import {CreditRequestDetailActiveItem} from "../../shared/credit-request-detail/credit-request-detail.component";
-import {firstValueFrom, map, pipe} from "rxjs";
-import {
-  ConfirmationModalComponent,
-  ConfirmationModalComponentEvent
-} from "../../shared/modal/confirmation-modal/confirmation-modal.component";
-import {UploadDocumentEventType} from "../../shared/upload-document/upload-document.component";
-import {MessageType} from "../../../service/app-message.service";
-import {CreditRequestService} from "../../../service/credit-request.service";
+import {ConfirmationModalComponent} from "../../shared/modal/confirmation-modal/confirmation-modal.component";
+
 import {
   BasicChartExampleComponent
 } from "../../shared/dashboard/charts/basic-chart-example/basic-chart-example.component";
@@ -48,13 +24,7 @@ import {
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    CreditRequestListComponent,
     CardModule,
-    WelcomeBannerComponent,
-    RecentlyPreApprovedComponent,
-    ViewRequestsComponent,
-    StatusOverviewComponent,
-    ReadyForDeliveryComponent,
     TranslateModule,
     ConfirmationModalComponent,
     BasicChartExampleComponent,
@@ -69,12 +39,6 @@ import {
 })
 export class DashboardComponent {
 
-  creditRetailStore = inject(CreditRetailStore)
-  creditRequestsState = this.creditRetailStore.creditRequestsBySalesPerson
-  creditRequests = computed<CreditRequest[]>(() =>
-    mapCreditRequestResponseToCreditRequest(this.creditRequestsState())
-      .filter(data => data.creditApplication.status?.enumId !== CreditRequestStatus.CANCELED)
-      .slice(0, 8))
 
   showConfirmationModal = false
   creditApplicationRequestIdToCancel = ``
@@ -87,8 +51,7 @@ export class DashboardComponent {
   deliveries: Delivery[] = []
 
   constructor(private router: Router,
-              private translateService: TranslateService,
-              private creditRequestService: CreditRequestService) {
+              private translateService: TranslateService) {
     // setTimeout(() => {
     //   const isInitialized = this.creditRequests().length > 0
     //   if (!isInitialized) {
@@ -110,29 +73,8 @@ export class DashboardComponent {
     // })
   }
 
-  handleCreditRequestListComponentEvents(event: CreditRequestListComponentEvent) {
-    switch (event.type) {
-      case CreditRequestListComponentEventType.VIEW_DETAILS:
-        this.router.navigate(['protected/pending-requests/detail/', event.item.creditApplication.creditApplicationId]).then()
-        break
-      case CreditRequestListComponentEventType.ADD_DOCUMENTS:
-        this.router.navigate([
-          'protected/pending-requests/detail/', event.item.creditApplication.creditApplicationId, CreditRequestDetailActiveItem.DOCUMENTS_UPLOAD_CREDIT_REQUEST
-        ]).then()
-        break
-      case CreditRequestListComponentEventType.CANCEL:
-        this.showConfirmationModal = true
-        this.creditApplicationRequestIdToCancel = event.item.creditApplication.creditApplicationId!
-        break
-    }
-  }
-
-
   onConfirmationModalEvent(event: any) {
     this.showConfirmationModal = event.show
-    if (event.confirmation) {
-      this.creditRetailStore.cancelCreditApplication(this.creditRequestService, this.creditApplicationRequestIdToCancel)
-    }
   }
 
 }

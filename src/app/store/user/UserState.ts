@@ -1,12 +1,12 @@
 import {patchState, signalStore, withMethods, withState} from "@ngrx/signals";
-import {User} from "../../domain/user";
+
 
 export interface UserState {
-  user: User;
+  user: any;
 }
 
 const initialState: UserState = {
-  user: new User('', '', [])
+  user: {}
 }
 
 export const UserStore = signalStore(
