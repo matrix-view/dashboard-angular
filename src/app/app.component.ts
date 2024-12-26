@@ -1,7 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {Router, RouterOutlet} from '@angular/router';
 import {ViewportScroller} from "@angular/common";
-import {HeaderComponent} from "./component/infra/header/header.component";
 import {ButtonModule} from "primeng/button";
 import {CreditRequestService} from "./service/credit-request.service";
 import {CreditRetailStore} from "./store/credit-retail/credit-retail-state";
@@ -10,6 +9,7 @@ import {Message, MessageService} from "primeng/api";
 import {MessagesModule} from "primeng/messages";
 import {TranslateService} from "@ngx-translate/core";
 import {Auth} from "@angular/fire/auth";
+import {MenubarComponent} from "./component/infra/header/menubar/menubar.component";
 
 
 @Component({
@@ -17,9 +17,9 @@ import {Auth} from "@angular/fire/auth";
   standalone: true,
   imports: [
     RouterOutlet,
-    HeaderComponent,
     ButtonModule,
     MessagesModule,
+    MenubarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

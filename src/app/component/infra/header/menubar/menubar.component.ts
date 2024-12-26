@@ -1,20 +1,42 @@
-import { Component } from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {MenuItem, PrimeTemplate} from "primeng/api";
 import {MenubarModule} from "primeng/menubar";
+import {AvatarModule} from "primeng/avatar";
+import {getUserInitials} from "../../../functions";
+import {BadgeModule} from "primeng/badge";
+import {OverlayModule} from "primeng/overlay";
+import {TranslateModule} from "@ngx-translate/core";
+import {Auth} from "@angular/fire/auth";
+import {Router} from "@angular/router";
+import {DividerModule} from "primeng/divider";
+import {toSignal} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-menubar',
   standalone: true,
   imports: [
     MenubarModule,
-    PrimeTemplate
+    PrimeTemplate,
+    AvatarModule,
+    BadgeModule,
+    OverlayModule,
+    TranslateModule,
+    DividerModule
   ],
   templateUrl: './menubar.component.html',
   styleUrl: './menubar.component.scss'
 })
 export class MenubarComponent {
 
+  angularFireAuth = inject(Auth)
+  router = inject(Router)
   items: MenuItem[] = []
+  protected readonly getUserInitials = getUserInitials;
+  menuClosed = true
+
+  user = signal({
+    name: 'Neo'
+  })
 
   ngOnInit() {
     this.items = [
@@ -146,4 +168,11 @@ export class MenubarComponent {
       }
     ];
   }
+
+
+  async signOut() {
+    await this.angularFireAuth.signOut()
+    return this.router.navigate(['/'])
+  }
+
 }

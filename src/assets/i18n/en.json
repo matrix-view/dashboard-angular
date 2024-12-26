@@ -1,8 +1,8 @@
 {
   "HEADER": {
     "REFRESH_BUTTON": "info updated at",
-    "DEALERSHIP_MENU": {
-      "CHANGE_DEALERSHIP": "Log out",
+    "MENU": {
+      "GREETING": "Hello {{user}}!",
       "LOGOUT": "Log out"
     }
   },

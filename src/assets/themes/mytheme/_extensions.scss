@@ -5,6 +5,8 @@
   background: $mma-bg-color;
 }
 
+
+
 .hidden {
   display: none !important;
 }
@@ -69,13 +71,54 @@ app-root {
   main {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    @apply flex flex-row;
+
     .main-section {
       @apply flex flex-col;
-      flex-grow: 1;
+
+      app-header {
+        width: 100%
+      }
+
     }
   }
 }
+
+
+app-menubar {
+
+  @apply w-full;
+  p-menubar .p-menubar {
+
+    background: $mma-menubar-background;
+    color: $mma-menubar-color;
+    border: $mma-menubar-border;
+    border-radius: $mma-menubar-border-radius;
+
+    p-menubarsub {
+      color: aliceblue;
+    }
+
+  }
+
+  .overlay-box {
+    @apply flex flex-col gap-5;
+    margin-top: .5rem;
+    background: $mma-menubar-overlay-background;
+    border: $mma-menubar-border;
+    color: aliceblue;
+
+    .item-1 {
+      padding: 14px 14px 0 14px;
+    }
+
+    .item-bottom {
+      padding: 0 14px 14px 14px;
+    }
+
+  }
+
+}
+
 
 app-login {
 

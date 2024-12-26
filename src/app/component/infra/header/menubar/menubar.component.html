@@ -1,7 +1,42 @@
 <main>
     <p-menubar [model]="items">
-        <ng-template pTemplate="start">
-            <img src="assets/images/matrix/icon-1.jpg" height="40" class="mr-2">
+
+
+        <ng-template #item let-item let-root="root">
+            <a pRipple class="flex items-center p-menubar-item-link">
+                <span>{{ item.label }}</span>
+                <p-badge *ngIf="item.badge"  [value]="item.badge" />
+                <span *ngIf="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
+                <i *ngIf="item.items" ></i>
+            </a>
+        </ng-template>
+
+        <ng-template pTemplate="end">
+            <div #divUser>
+                <p-avatar
+                        [label]="getUserInitials('Neo')"
+                        styleClass="mr-2"
+                        size="large"
+                        shape="circle"
+                        class="cursor-pointer"
+                        (click)="menuClosed = !menuClosed"
+                />
+            </div>
+            <p-overlay
+                    [appendTo]="divUser"
+                    [visible]="!menuClosed"
+            >
+                <div class="overlay-box">
+                    <div class="item-1">
+                        {{ 'HEADER.MENU.GREETING' |  translate : { user: user().name } }}
+                    </div>
+                    <p-divider/>
+                    <div class="item-bottom cursor-pointer" (click)="signOut()">
+                        <i class="pi pi-fw pi-power-off mr-2"></i>
+                        {{ 'HEADER.MENU.LOGOUT' |  translate }}
+                    </div>
+                </div>
+            </p-overlay>
         </ng-template>
     </p-menubar>
 </main>

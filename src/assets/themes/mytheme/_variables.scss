@@ -1,6 +1,13 @@
 $mma-font-family: Graphie-Regular, sans-serif;
 $mma-font-family-bold: Graphie-Bold, sans-serif;
 
+$mma-menubar-background-color: #1d5b21;
+$mma-menubar-background: rgba($mma-menubar-background-color, 0.3);
+$mma-menubar-overlay-background: rgba($mma-menubar-background-color, 1);
+$mma-menubar-color: $mma-menubar-background-color;
+$mma-menubar-border: 2px solid #9fcea1;
+$mma-menubar-border-radius: 6px;
+
 $mma-p-white: #FFFFFF;
 $mma-p-black: #000000;
 $mma-p-green: #1d5b21;
