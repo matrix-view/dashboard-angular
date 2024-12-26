@@ -2,7 +2,6 @@ import {Component, inject} from '@angular/core';
 import {Router, RouterOutlet} from '@angular/router';
 import {ViewportScroller} from "@angular/common";
 import {HeaderComponent} from "./component/infra/header/header.component";
-import {SidebarComponent} from "./component/infra/sidebar/sidebar.component";
 import {ButtonModule} from "primeng/button";
 import {CreditRequestService} from "./service/credit-request.service";
 import {CreditRetailStore} from "./store/credit-retail/credit-retail-state";
@@ -11,7 +10,6 @@ import {Message, MessageService} from "primeng/api";
 import {MessagesModule} from "primeng/messages";
 import {TranslateService} from "@ngx-translate/core";
 import {Auth} from "@angular/fire/auth";
-import {Observable} from "rxjs";
 
 
 @Component({
@@ -20,7 +18,6 @@ import {Observable} from "rxjs";
   imports: [
     RouterOutlet,
     HeaderComponent,
-    SidebarComponent,
     ButtonModule,
     MessagesModule,
   ],

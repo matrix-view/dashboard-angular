@@ -14,6 +14,7 @@ import {TranslateModule} from "@ngx-translate/core";
 import {Auth} from "@angular/fire/auth";
 import {Router} from "@angular/router";
 import {InputIconModule} from "primeng/inputicon";
+import {MenubarComponent} from "./menubar/menubar.component";
 
 @Component({
   selector: 'app-header',
@@ -27,7 +28,8 @@ import {InputIconModule} from "primeng/inputicon";
         RadioButtonModule,
         FormsModule,
         TranslateModule,
-        InputIconModule
+        InputIconModule,
+        MenubarComponent
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
