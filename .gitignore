@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 .idea
+/src/app/config/firebase.ts
+
+.angular
